@@ -10,7 +10,7 @@
 ### Initiative Approval Gates
 
 **Before /plan execution:**
-- spec.md complete with all sections
+- objective.md complete with all sections
 - OKR quality validated (SMART criteria met)
 - Stakeholders identified (at minimum: Accountable role assigned)
 - Initiative sizing within quarter (≤13 weeks estimated)
