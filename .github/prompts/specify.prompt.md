@@ -5,14 +5,14 @@ description: Create or update the initiative specification from a natural langua
 ## User Input
 
 ```text
-$ARGUMENTS
+{{user_input}}
 ```
 
 You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-The text the user typed after `/speckit.specify` in the triggering message **is** the initiative description. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
+The user's input after triggering the `/specify` prompt **is** the initiative description. Assume you always have it available in this conversation even if `{{user_input}}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
 
 Given that initiative description, do this:
 
@@ -76,11 +76,9 @@ Given that initiative description, do this:
    - Write the specification to SPEC_FILE (already inside INITIATIVE_DIR)
    - **DO NOT create any implementation artifacts** (no .yaml files, no .py scripts, no .csv files)
    - This is the **BRAINSTORMING phase** - only create planning documents (spec.md, analysis documents)
-   - Implementation artifacts will be created later during `/speckit.implement` phase
+   - Implementation artifacts will be created later during the `implement` phase
 
-6. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the initiative description (arguments) while preserving section order and headings.
-
-6. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the initiative description (arguments) while preserving section order and headings.
+6. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the initiative description (user input) while preserving section order and headings.
 
 7. **Specification Quality Validation**: After writing the initial spec, validate it against quality criteria:
 
@@ -129,7 +127,7 @@ Given that initiative description, do this:
       
       ## Notes
       
-      - Items marked incomplete require spec updates before `/speckit.clarify` or `/speckit.plan`
+      - Items marked incomplete require spec updates before running `clarify` or `plan` prompts
       ```
 
    b. **Run Validation Check**: Review the spec against each checklist item:
@@ -183,9 +181,9 @@ Given that initiative description, do this:
 
    d. **Update Checklist**: After each validation iteration, update the checklist file with current pass/fail status
 
-7. Report completion with the spec file path, initiative folder (INITIATIVE_DIR), checklist results, and readiness for the next phase (`/speckit.clarify` or `/speckit.plan`).
+7. Report completion with the spec file path, initiative folder (INITIATIVE_DIR), checklist results, and readiness for the next phase (running the `clarify` or `plan` prompt).
 
-**REMINDER**: This is the specification/brainstorming phase. Do NOT create implementation artifacts like .yaml files, .py scripts, .csv templates, etc. Those will be created during `/speckit.implement` phase.
+**REMINDER**: This is the specification/brainstorming phase. Do NOT create implementation artifacts like .yaml files, .py scripts, .csv templates, etc. Those will be created during the `implement` phase.
 
 **NOTE:** This prompt will create the initiative directory and the spec file.
 

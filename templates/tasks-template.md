@@ -20,7 +20,7 @@ description: "Task list template for initiative execution"
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
   
-  The /speckit.tasks command MUST replace these with actual tasks based on:
+  The `tasks` prompt MUST replace these with actual tasks based on:
   - Business scenarios from spec.md (with their priorities P1, P2, P3...)
   - Initiative requirements from plan.md
   - Stakeholder needs from stakeholder-analysis.md

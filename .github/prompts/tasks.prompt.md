@@ -5,7 +5,7 @@ description: Generate an actionable, dependency-ordered tasks.md for the busines
 ## User Input
 
 ```text
-$ARGUMENTS
+{{user_input}}
 ```
 
 You **MUST** consider the user input before proceeding (if not empty).
@@ -23,11 +23,11 @@ Think like a project manager executing a business transformation, not a software
 
 ## Outline
 
-1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory in their prompt. From there, derive the absolute paths for the core artifacts. If no directory is provided, you must ask the user for it.
     -   INITIATIVE_DIR = `specs/<initiative-name>/`
     -   AVAILABLE_DOCS = List of files in `INITIATIVE_DIR`
 
-2.  **File Check**: Abort with an error message if `spec.md` or `plan.md` are missing from AVAILABLE_DOCS. Instruct the user to run the prerequisite commands (`/speckit.specify`, `/speckit.plan`).
+2.  **File Check**: Abort with an error message if `spec.md` or `plan.md` are missing from AVAILABLE_DOCS. Instruct the user to run the prerequisite prompts (`specify`, `plan`).
 
 3. **Execute task generation workflow**:
    - Load plan.md and extract execution strategy, phasing approach, resource allocation
@@ -41,7 +41,7 @@ Think like a project manager executing a business transformation, not a software
    - Create parallel execution examples per scenario
    - Validate task completeness (each scenario has all needed activities, independently validatable)
 
-4. **Generate tasks.md**: Use `.specify/templates/tasks-template.md` as structure, fill with:
+4. **Generate tasks.md**: Use `templates/tasks-template.md` as structure, fill with:
    - Correct initiative name from plan.md
    - Phase 1: Initiative Setup (kickoff, governance, tracking)
    - Phase 2: Foundational tasks (blocking prerequisites for all scenarios - stakeholder workshops, approvals, baseline data)
@@ -62,7 +62,7 @@ Think like a project manager executing a business transformation, not a software
    - Suggested MVP scope (typically just Scenario 1 / P1)
    - Format validation: Confirm ALL tasks follow the JIRA-ready format (checkbox, ID, labels, deliverables, acceptance criteria)
 
-Context for task generation: {ARGS}
+Context for task generation: {{user_input}}
 
 The tasks.md should be **JIRA-importable** - each task must have sufficient detail that:
 - A business operations professional can complete it without additional context

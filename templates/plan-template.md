@@ -1,9 +1,9 @@
 # Initiative Execution Plan: [INITIATIVE NAME]
 
-**Branch**: `[###-initiative-name]` | **Date**: [DATE] | **Spec**: [link]
+**Date**: [DATE] | **Spec**: [link]
 **Input**: Initiative specification from `/specs/[###-initiative-name]/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `plan` prompt. See `.github/prompts/plan.prompt.md` for the execution workflow.
 
 ## Executive Summary
 
@@ -44,13 +44,13 @@
 
 ```text
 specs/[###-initiative]/
-├── plan.md                    # This file (/speckit.plan command output)
-├── stakeholder-analysis.md    # Phase 0 output (/speckit.plan command)
-├── process-maps.md            # Phase 1 output (/speckit.plan command) - if relevant
-├── communication-plan.md      # Phase 1 output (/speckit.plan command)
-├── execution-guide.md         # Phase 1 output (/speckit.plan command)
-├── training-materials/        # Phase 1 output (/speckit.plan command) - if relevant
-└── tasks.md                   # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
+├── plan.md                    # This file (output of the plan prompt)
+├── stakeholder-analysis.md    # Phase 0 output (plan prompt)
+├── process-maps.md            # Phase 1 output (plan prompt) - if relevant
+├── communication-plan.md      # Phase 1 output (plan prompt)
+├── execution-guide.md         # Phase 1 output (plan prompt)
+├── training-materials/        # Phase 1 output (plan prompt) - if relevant
+└── tasks.md                   # Phase 2 output (tasks prompt - NOT created by this prompt)
 ```
 
 ## Complexity & Risk Tracking
@@ -173,7 +173,7 @@ specs/[###-initiative]/
 
 ## Phase 2: Task Breakdown
 
-This phase is handled by the `/speckit.tasks` command (see tasks.md). It will break down the execution plan into specific action items organized by:
+This phase is handled by the `tasks` prompt (see tasks.md). It will break down the execution plan into specific action items organized by:
 - Planning & preparation tasks
 - Stakeholder engagement activities
 - Document creation and approval workflows
@@ -187,7 +187,7 @@ This phase is handled by the `/speckit.tasks` command (see tasks.md). It will br
 
 ## Success Criteria for Plan Completion
 
-Before moving to task generation (`/speckit.tasks`), verify:
+Before moving to task generation (using the `tasks` prompt), verify:
 
 - [ ] Stakeholder analysis is comprehensive and complete
 - [ ] All [NEEDS CLARIFICATION] items from spec.md are resolved
@@ -206,5 +206,5 @@ Before moving to task generation (`/speckit.tasks`), verify:
 
 1. Review this plan with executive sponsor and core team
 2. Obtain formal approval to proceed
-3. Run `/speckit.tasks` to generate detailed action items
+3. Run the `tasks` prompt to generate detailed action items
 4. Begin Phase 0 stakeholder analysis activities

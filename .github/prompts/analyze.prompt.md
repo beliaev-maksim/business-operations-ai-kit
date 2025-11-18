@@ -5,7 +5,7 @@ description: Perform a non-destructive cross-artifact consistency and quality an
 ## User Input
 
 ```text
-$ARGUMENTS
+{{user_input}}
 ```
 
 You **MUST** consider the user input before proceeding (if not empty).
@@ -24,13 +24,13 @@ Think like a consultant conducting a quality assurance review before presenting 
 
 ## Goal
 
-Identify inconsistencies, gaps, oversights, and quality issues across the three core artifacts (`spec.md`, `plan.md`, `tasks.md`) before execution. This command MUST run only after `/speckit.tasks` has successfully produced a complete `tasks.md`.
+Identify inconsistencies, gaps, oversights, and quality issues across the three core artifacts (`spec.md`, `plan.md`, `tasks.md`) before execution. This command MUST run only after the `tasks` prompt has successfully produced a complete `tasks.md`.
 
 ## Operating Constraints
 
 **STRICTLY READ-ONLY**: Do **not** modify any files. Output a structured analysis report. Offer an optional remediation plan (user must explicitly approve before any follow-up editing commands would be invoked manually).
 
-**Constitution Authority**: The project constitution (`/memory/constitution.md`) is **non-negotiable** within this analysis scope. Constitution conflicts are automatically CRITICAL and require adjustment of the spec, plan, or tasks—not dilution, reinterpretation, or silent ignoring of the principle. If a principle itself needs to change, that must occur in a separate, explicit constitution update outside `/speckit.analyze`.
+**Constitution Authority**: The project constitution (`constitution.prompt.md`) is **non-negotiable** within this analysis scope. Constitution conflicts are automatically CRITICAL and require adjustment of the spec, plan, or tasks—not dilution, reinterpretation, or silent ignoring of the principle. If a principle itself needs to change, that must occur in a separate, explicit constitution update outside this prompt.
 
 ## Execution Steps
 
@@ -77,7 +77,7 @@ Load only the minimal necessary context from each artifact:
 
 **From constitution:**
 
-- Load `/memory/constitution.md` for governance principle validation
+- Load `constitution.prompt.md` for governance principle validation
 
 ### 3. Build Semantic Models
 
@@ -213,10 +213,10 @@ Output a Markdown report (no file writes) with the following structure:
 
 At end of report, output a concise Next Actions block:
 
-- If CRITICAL issues exist: Recommend resolving before `/speckit.implement`. List specific blockers.
+- If CRITICAL issues exist: Recommend resolving before running the `implement` prompt. List specific blockers.
 - If only HIGH issues: User may proceed with caution, but strongly recommend addressing before execution
 - If only LOW/MEDIUM: User may proceed, provide improvement suggestions for future iterations
-- Provide explicit command suggestions: e.g., "Run /speckit.specify to refine KR2 with baseline/target metrics", "Run /speckit.plan to add stakeholder engagement tasks", "Manually edit tasks.md to add validation tasks for S2"
+- Provide explicit command suggestions: e.g., "Run the `specify` prompt to refine KR2 with baseline/target metrics", "Run the `plan` prompt to add stakeholder engagement tasks", "Manually edit tasks.md to add validation tasks for S2"
 
 ### 8. Offer Remediation
 
@@ -241,4 +241,4 @@ Ask the user: "Would you like me to suggest concrete remediation edits for the t
 
 ## Context
 
-{ARGS}
+{{user_input}}

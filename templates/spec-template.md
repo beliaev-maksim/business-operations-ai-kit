@@ -5,7 +5,7 @@
 **Function**: [HR/Legal/Sales Ops/Marketing/Finance/Operations/Other]
 **Created**: [DATE]
 **Status**: Draft
-**Input**: Description: "$ARGUMENTS"
+**Input**: Description: "{{user_input}}"
 
 ## Strategic Context *(mandatory)*
 

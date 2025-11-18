@@ -5,7 +5,7 @@ description: Execute the initiative planning workflow using the plan template to
 ## User Input
 
 ```text
-$ARGUMENTS
+{{user_input}}
 ```
 
 You **MUST** consider the user input before proceeding (if not empty).
@@ -24,19 +24,19 @@ Apply proven consulting frameworks and best practices throughout this planning w
 
 ## Outline
 
-1. **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+1. **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory in their prompt. From there, derive the absolute paths for the core artifacts. If no directory is provided, you must ask the user for it.
    - INITIATIVE_SPEC = `specs/<initiative-name>/spec.md`
    - EXEC_PLAN = `specs/<initiative-name>/plan.md`
    - INITIATIVE_DIR = `specs/<initiative-name>/`
 
-2. **Load context**: Read INITIATIVE_SPEC and `/.specify/memory/constitution.md`. Load EXEC_PLAN template (already copied).
+2. **Load context**: Read INITIATIVE_SPEC and `constitution.prompt.md`. Load EXEC_PLAN template (already copied).
 
 3. **CRITICAL - File Organization**:
    - ALL planning artifacts MUST be created inside INITIATIVE_DIR (specs/<number>-<short-name>/)
    - Create subdirectories within INITIATIVE_DIR as needed: stakeholder-analysis/, communication/, process-maps/, training-materials/, etc.
    - **DO NOT create any implementation artifacts** (no .yaml files, no .py scripts, no .csv files, no executable code)
    - This is the **PLANNING/BRAINSTORMING phase** - only create planning documents (markdown files, outlines, templates)
-   - Implementation artifacts will be created later during `/speckit.implement` phase
+   - Implementation artifacts will be created later during the `implement` phase
    - Think of this phase as "designing and documenting the strategy" not "building the solution"
 
 4. **Execute planning workflow**: Follow the structure in EXEC_PLAN template to:
@@ -48,7 +48,7 @@ Apply proven consulting frameworks and best practices throughout this planning w
    - Phase 1: Update agent context if necessary.
    - Re-evaluate Constitution Check post-planning (ensure readiness for execution)
 
-5. **Stop and report**: Command ends after Phase 1 planning complete. Report branch, EXEC_PLAN path, INITIATIVE_DIR, and generated artifacts (all within INITIATIVE_DIR).
+5. **Stop and report**: Command ends after Phase 1 planning complete. Report the EXEC_PLAN path, INITIATIVE_DIR, and generated artifacts (all within INITIATIVE_DIR).
 
 **REMINDER**: This is the planning/brainstorming phase. Do NOT create implementation artifacts. Examples of what NOT to create:
 - ❌ `.yaml` or `.yml` configuration files

@@ -5,7 +5,7 @@ description: Execute the initiative execution plan by processing and completing 
 ## User Input
 
 ```text
-$ARGUMENTS
+{{user_input}}
 ```
 
 You **MUST** consider the user input before proceeding (if not empty).
@@ -25,7 +25,7 @@ Think like a project manager executing a business transformation, tracking deliv
 
 ## Outline
 
-1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory in their prompt. From there, derive the absolute paths for the core artifacts. If no directory is provided, you must ask the user for it.
     -   INITIATIVE_DIR = `specs/<initiative-name>/`
     -   AVAILABLE_DOCS = List of files in `INITIATIVE_DIR`
 
@@ -123,5 +123,5 @@ Think like a project manager executing a business transformation, tracking deliv
    - Check that sustainment plan is in place (knowledge transfer, continuous improvement)
    - Report final status with summary of completed deliverables and outcomes
 
-Note: This command assumes a complete task breakdown exists in tasks.md. If tasks are incomplete or missing, suggest running `/speckit.tasks` first to regenerate the task list.
+Note: This command assumes a complete task breakdown exists in tasks.md. If tasks are incomplete or missing, suggest running the `tasks` prompt first to regenerate the task list.
 
