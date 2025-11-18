@@ -28,9 +28,9 @@ The process is broken down into a sequence of steps. You should follow them in o
 
 ### Step 2: Set the Constitution
 -   **Prompt**: `/constitution`
--   **Goal**: To establish the rules and principles for the AI agent's behavior.
--   **Action**: The agent will load its core principles. This should be done at the beginning of your session.
--   **Example**: `/constitution Please load your core principles.`
+-   **Goal**: To establish the rules and principles for the AI agent's behavior for a specific department.
+-   **Action**: The agent will use a template to create a `02_constitution.md` file with the core principles for a specific department.
+-   **Example**: `/constitution for the HR department`
 
 ### Step 3: Specify Your Initiative
 -   **Prompt**: `/specify`
