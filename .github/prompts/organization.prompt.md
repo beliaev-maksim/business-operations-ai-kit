@@ -3,6 +3,10 @@ name: Business Ops AI Kit - Organization Context
 ---
 # Organization Context
 
+## Agent Constitution
+
+Before taking any action, you **MUST** open and consult the `templates/agent-file.md` file. This document defines your persona, consultation style, and critical assessment frameworks. Adhere to these guidelines at all times.
+
 This prompt is designed to gather and synthesize information about the user's organization. The goal is to create a comprehensive document that will serve as a foundation for defining Objectives and Key Results (OKRs).
 
 ## Instructions

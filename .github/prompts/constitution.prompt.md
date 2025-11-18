@@ -10,6 +10,10 @@ description: Create or update the project constitution from interactive or provi
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+## Agent Constitution
+
+Before taking any action, you **MUST** open and consult the `templates/agent-file.md` file. This document defines your persona, consultation style, and critical assessment frameworks. Adhere to these guidelines at all times.
+
 ## Outline
 
 You are creating a new constitution file `02_constitution.md` based on the template at `templates/constitution-template.md`. This template contains placeholder tokens in square brackets (e.g. `[DEPARTMENT_NAME]`, `[CORE_PRINCIPLES]`). Your job is to (a) collect/derive concrete values from the user, (b) fill the template precisely, and (c) create the new constitution file.
