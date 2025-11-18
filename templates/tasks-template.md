@@ -2,13 +2,13 @@
 
 **Date**: [DATE]
 **Objective**: [Link to 03_objective_name.md]
-**Plan**: [Link to 04_plan.md]
+**Plan**: [Link to 05_plan.md]
 
 **Note**: This template is filled in by the `tasks` prompt. See `.github/prompts/tasks.prompt.md` for the execution workflow.
 
 ## 1. Solution Recap
 
-[Copy the description and acceptance criteria for the chosen solution from `04_plan.md` here for context.]
+[Copy the description and acceptance criteria for the chosen solution from `05_plan.md` here for context.]
 
 ---
 

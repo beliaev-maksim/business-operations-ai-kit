@@ -46,11 +46,11 @@ Before taking any action, you **MUST** open and consult the `templates/agent-fil
         *   The ranking should be based on a balanced assessment of impact, effort, and alignment with general business best practices. The #1 solution should typically offer the best value proposition.
 
 3.  **File Creation**:
-    *   Create a new file named `04_plan.md` in the root of the workspace.
+    *   Create a new file named `05_plan.md` in the root of the workspace.
     *   Populate this file with the brainstormed and evaluated solutions, following the structure of `templates/plan-template.md`.
 
 4.  **Report Completion**:
-    *   Inform the user that the `04_plan.md` file has been created.
+    *   Inform the user that the `05_plan.md` file has been created.
     *   Provide a brief summary of the recommended solution (#1) and why it was chosen.
     *   Advise the user to review the options with stakeholders and then use the `/tasks` prompt to create a detailed implementation plan for the selected solution.
 

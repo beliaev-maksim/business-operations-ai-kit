@@ -17,14 +17,14 @@ The user may provide the name of the solution they have chosen.
 ## Outline
 
 1.  **Identify Context Files**:
-    *   Locate the `03_...md` file (Objective) and the `04_plan.md` file in the workspace. These are essential inputs.
+    *   Locate the `03_...md` file (Objective) and the `05_plan.md` file in the workspace. These are essential inputs.
     *   If either file is missing, you MUST stop and inform the user that the `objective` and `plan` commands must be run first.
 
 2.  **Solution Selection Workflow**:
-    *   **Step 2a: Parse Solutions**: Read `04_plan.md` and identify the ranked solutions presented. Extract the title/name of each solution.
+    *   **Step 2a: Parse Solutions**: Read `05_plan.md` and identify the ranked solutions presented. Extract the title/name of each solution.
     *   **Step 2b: Prompt User for Selection**:
-        *   If the user has NOT already specified a solution in their input, you MUST present the list of solutions from `04_plan.md` and ask the user to choose one to proceed with.
-        *   If the user HAS specified a solution, confirm that it matches one of the options in `04_plan.md`. If it doesn't match, list the available options and ask for clarification.
+        *   If the user has NOT already specified a solution in their input, you MUST present the list of solutions from `05_plan.md` and ask the user to choose one to proceed with.
+        *   If the user HAS specified a solution, confirm that it matches one of the options in `05_plan.md`. If it doesn't match, list the available options and ask for clarification.
 
 3.  **Task Plan Generation**:
     *   Once a valid solution is chosen, proceed with generating the detailed task plan.
@@ -34,8 +34,8 @@ The user may provide the name of the solution they have chosen.
         *   **[SOLUTION_NAME]**: The name of the chosen solution.
         *   **[DATE]**: The current date.
         *   **[Link to 03_objective_name.md]**: Add a relative link to the objective file.
-        *   **[Link to 04_plan.md]**: Add a relative link to the plan file.
-        *   **Solution Recap**: Find the chosen solution in `04_plan.md` and copy its `Description` and `Acceptance Criteria` into this section. This provides essential context.
+        *   **[Link to 05_plan.md]**: Add a relative link to the plan file.
+        *   **Solution Recap**: Find the chosen solution in `05_plan.md` and copy its `Description` and `Acceptance Criteria` into this section. This provides essential context.
         *   **Task Breakdown**: This is the most critical part. You must generate a comprehensive list of tasks that would be required to implement the chosen solution.
             *   **Adhere to the Phases**: Generate tasks that logically fit within the predefined phases: `Planning & Discovery`, `Design & Prototyping`, `Implementation & Testing`, `Rollout & Change Management`, and `Measurement & Closure`.
             *   **Generate Realistic Tasks**: The tasks should be specific, actionable, and relevant to the solution. Think about what a real project manager would need to track. Include tasks for project management, stakeholder communication, requirements gathering, design, development/configuration, testing, training, deployment, and post-launch support.
