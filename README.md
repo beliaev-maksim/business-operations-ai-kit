@@ -32,11 +32,11 @@ The process is broken down into a sequence of steps. You should follow them in o
 -   **Action**: The agent will use a template to create a `02_constitution.md` file with the core principles for a specific department.
 -   **Example**: `/constitution for the HR department`
 
-### Step 3: Specify Your Initiative
--   **Prompt**: `/specify`
+### Step 3: Specify Your Objective
+-   **Prompt**: `/objective`
 -   **Goal**: To clearly define a new initiative or OKR.
--   **Action**: The agent will guide you in creating a detailed specification document.
--   **Example**: `/specify I want to create an OKR to improve our customer onboarding process.`
+-   **Action**: The agent will guide you in creating a detailed objective document.
+-   **Example**: `/objective I want to create an OKR to improve our customer onboarding process.`
 
 ### Step 4: Clarify and Refine
 -   **Prompt**: `/clarify`
@@ -68,11 +68,6 @@ The process is broken down into a sequence of steps. You should follow them in o
 -   **Action**: The agent can help you review data, summarize results, and prepare reports.
 -   **Example**: `/analyze Let's analyze the feedback from the first week of the new onboarding process.`
 
-### Step 9: Final Checklist
--   **Prompt**: `/checklist`
--   **Goal**: To ensure all aspects of the initiative have been addressed.
--   **Action**: The agent will run through a checklist to validate the completeness of the work.
--   **Example**: `/checklist Run the final checklist for the customer onboarding project.`
 
 
 
