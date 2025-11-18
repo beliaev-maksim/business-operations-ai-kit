@@ -36,11 +36,7 @@ Identify inconsistencies, gaps, oversights, and quality issues across the three 
 
 ### 1. Initialize Analysis Context
 
-Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
-
-- SPEC = `specs/<initiative-name>/spec.md`
-- PLAN = `specs/<initiative-name>/plan.md`
-- TASKS = `specs/<initiative-name>/tasks.md`
+Assume the initiative files are located in a workspace directory. From there, derive the absolute paths for the core artifacts. 
 
 ### 2. Load Artifacts (Progressive Disclosure)
 
@@ -97,7 +93,12 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 - **SMART Criteria Validation**: Check each Key Result for Specific, Measurable, Achievable, Relevant, Time-bound attributes
 - **Baseline/Target Verification**: Flag KRs missing baseline values or target values
+- **Baseline Data Existence**: Verify baseline data can be measured today (data source specified)
+- **Baseline Measurement Timing**: Check that baseline task scheduled BEFORE implementation
+- **Measurement Ownership**: Verify who collects/analyzes/reports is assigned
+- **Data Quality Validation**: Check that measurement approach and data quality is addressed
 - **Measurability Check**: Identify KRs with unmeasurable verbs (improve, enhance, optimize) without quantified metrics
+- **Success Threshold Definition**: Verify minimum viable/target/stretch thresholds defined
 - **Leading vs Lagging Indicators**: Verify mix of predictive and outcome measures
 
 #### B. Initiative Sizing Analysis
@@ -105,6 +106,9 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 - **Atomicity Check**: Flag initiatives spanning >1 quarter or requiring >3 business scenarios
 - **Complexity Assessment**: Identify initiatives with >20 tasks in a single scenario (suggests scenario needs breakdown)
 - **Dependency Analysis**: Flag scenarios with circular dependencies or blocking chains >5 tasks deep
+- **Critical Path Identification**: Verify critical path identified and flagged
+- **Dependency Blocker Assessment**: Flag dependencies that could delay >2 weeks with no mitigation
+- **Dependency Owner Commitment**: Check that dependency owners have committed timelines
 - **MVP Viability**: Verify P1/S1 scenario can deliver value independently
 
 #### C. Stakeholder Coverage
@@ -118,31 +122,50 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 - **Budget Alignment**: Flag missing budget estimates or resource allocations
 - **Capacity Check**: Identify initiatives requiring >80% of team capacity (high risk)
+- **Resource Loading Validation**: Check if team % allocation is specified (flag if missing)
+- **Competing Priority Analysis**: Identify other concurrent initiatives using same resources
+- **Skill Gap Assessment**: Validate required capabilities are available on team
 - **Timeline Realism**: Flag scenarios with <2 weeks for design+approval+rollout+validation
 - **Expertise Gaps**: Identify required capabilities not listed in resource allocation
+- **Critical Path Buffer**: Verify 20-30% buffer time added to critical path tasks
 
-#### E. Change Management Readiness
+#### E. Risk Assessment Depth
 
+- **Probability/Impact Matrix**: Verify each risk has probability (L/M/H) and impact (L/M/H) ratings
+- **Risk Scoring**: Check risk scores calculated (Probability × Impact) and prioritized
+- **High-Risk Mitigation**: Verify risks with score ≥6 have mitigation plans
+- **Risk Ownership**: Check that each risk has assigned owner in RACI
+- **Mitigation Tasks**: Verify mitigation tasks exist in task breakdown for high risks
+- **Risk Categories**: Check coverage of financial, operational, reputational, compliance risks
+- **Single Point of Failure**: Flag critical dependencies with no backup/contingency
+
+#### F. Change Management Readiness
+
+- **Change Magnitude Classification**: Verify Minor/Moderate/Transformational assessment present
+- **Change Readiness Assessment**: Check executive sponsorship, team capability, cultural fit evaluation
+- **Change Capacity Analysis**: Review concurrent initiatives and change fatigue indicators
 - **Adoption Activities**: Verify change management section has corresponding tasks
 - **Readiness Assessment**: Check for organizational readiness evaluation in plan
-- **Risk Mitigation**: Verify high-severity risks have mitigation tasks
+- **ADKAR Recommendation**: For Transformational changes, verify Prosci ADKAR assessment included
 - **Sustainment Planning**: Check for knowledge transfer and continuous improvement tasks
+- **BAU Owner Identification**: Verify post-launch owner specified
+- **30/60/90 Day Reviews**: Check that periodic review schedule is defined
 
-#### F. Business Scenario Coverage
+#### G. Business Scenario Coverage
 
 - **Scenario-to-Task Mapping**: Flag scenarios with zero tasks
 - **Task-to-Scenario Mapping**: Flag tasks with no scenario label that aren't in Setup/Foundational/Closure phases
 - **Validation Completeness**: Each scenario must have validation tasks (measurement, user acceptance, success criteria verification)
 - **Approval Workflow**: Check that scenarios requiring approvals have explicit approval tasks
 
-#### G. Ambiguity & Underspecification
+#### H. Ambiguity & Underspecification
 
 - **Vague Language**: Flag adjectives lacking criteria (seamless, user-friendly, efficient, effective, streamlined) without measurable definitions
 - **Unresolved Placeholders**: Flag TODO, TBD, TBA, ???, [pending], etc.
 - **Missing Deliverables**: Tasks without clear deliverable specifications
 - **Undefined Acronyms**: Identify unexplained abbreviations or jargon
 
-#### H. Inconsistency Detection
+#### I. Inconsistency Detection
 
 - **Terminology Drift**: Same concept named differently across artifacts (e.g., "employee" vs "staff member" vs "team member")
 - **Conflicting Information**: Timeline mismatches, resource allocation conflicts, contradictory success metrics

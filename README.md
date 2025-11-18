@@ -21,52 +21,41 @@ The core philosophy is defined in the `constitution.prompt.md`, which sets the r
 The process is broken down into a sequence of steps. You should follow them in order to get the best results. Each step corresponds to a prompt that you will use to instruct the AI agent.
 
 ### Step 1: Define Your Organizational Context
--   **Prompt**: `/organization`
+-   **Prompt**: `/organization <name of the organization and need to know context>`
 -   **Goal**: To create a foundational document with key information about your organization.
 -   **Action**: The agent will ask you questions, do some research, and create a file named `01_organization.md`. You should review this file for accuracy.
 -   **Example**: `/organization My company is called Canonical, publisher of Ubuntu OS`
 
 ### Step 2: Set the Constitution
--   **Prompt**: `/constitution`
+-   **Prompt**: `/constitution <department and its context>`
 -   **Goal**: To establish the rules and principles for the AI agent's behavior for a specific department.
 -   **Action**: The agent will use a template to create a `02_constitution.md` file with the core principles for a specific department.
 -   **Example**: `/constitution for the HR department`
 
 ### Step 3: Specify Your Objective
--   **Prompt**: `/objective`
+-   **Prompt**: `/objective <your objective>`
 -   **Goal**: To clearly define a new initiative or OKR.
 -   **Action**: The agent will guide you in creating a detailed objective document.
 -   **Example**: `/objective I want to create an OKR to improve our customer onboarding process.`
 
-### Step 4: Clarify and Refine
+### Step 4 (optional): Clarify and Refine
 -   **Prompt**: `/clarify`
 -   **Goal**: To have the agent review a document and ask you clarifying questions to help improve it.
 -   **Action**: The agent will analyze a specification or plan and identify areas that need more detail or clarity.
--   **Example**: `/clarify Can you review the specification for the new onboarding process and ask me some questions to make it better?`
+-   **Example**: `/clarify Can you review the objective for the new onboarding process and ask me some questions to make it better?`
 
 ### Step 5: Create a Plan
 -   **Prompt**: `/plan`
 -   **Goal**: To develop a high-level plan for executing the initiative.
 -   **Action**: The agent will generate a plan based on the specification.
--   **Example**: `/plan Let's create a plan for the customer onboarding initiative.`
+-   **Example**: `/plan`
 
 ### Step 6: Break Down into Tasks
--   **Prompt**: `/tasks`
+-   **Prompt**: `/tasks <task to break>`
 -   **Goal**: To break the high-level plan into smaller, actionable tasks.
 -   **Action**: The agent will create a detailed task list.
--   **Example**: `/tasks Break down the onboarding plan into smaller tasks.`
+-   **Example**: `/tasks Break down the onboarding plan solution.`
 
-### Step 7: Implement the Work
--   **Prompt**: `/implement`
--   **Goal**: To get assistance in executing the defined tasks.
--   **Action**: The agent can help you draft documents, write scripts, or perform other work as needed.
--   **Example**: `/implement Help me draft an email to announce the new onboarding process.`
-
-### Step 8: Analyze and Review
--   **Prompt**: `/analyze`
--   **Goal**: To analyze the progress or outcome of your initiative.
--   **Action**: The agent can help you review data, summarize results, and prepare reports.
--   **Example**: `/analyze Let's analyze the feedback from the first week of the new onboarding process.`
 
 
 

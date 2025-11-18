@@ -69,7 +69,10 @@ Execution steps:
 
    **Organizational Readiness & Change Impact:**
    - Current state assessment (processes, systems, capabilities)
-   - Change magnitude assessment (minor/moderate/transformational)
+   - **CRITICAL: Change magnitude classification (Minor/Moderate/Transformational)**
+   - **Executive sponsorship strength and visibility**
+   - **Team capability assessment for this type of change**
+   - **Cultural alignment with change magnitude**
    - Organizational change capacity / change fatigue levels
    - Cultural readiness for change
    - Training needs identification
@@ -78,6 +81,9 @@ Execution steps:
 
    **Resource Availability & Constraints:**
    - Budget allocation clarity (approved, estimated, unknown)
+   - **CRITICAL: Team capacity assessment (% allocation to this vs BAU work)**
+   - **Competing priority identification (other Q initiatives)**
+   - **Skill gap analysis (required capabilities vs available)**
    - FTE / resource availability and commitment level
    - External vendor or consultant needs
    - Technology / tooling dependencies
@@ -86,6 +92,9 @@ Execution steps:
 
    **Timeline & Dependencies:**
    - Initiative duration and quarter alignment
+   - **CRITICAL: Critical path identification**
+   - **Dependency blocker assessment (what could delay >2 weeks?)**
+   - **Dependency owner commitment validation**
    - Critical path milestones
    - External dependencies (other teams, vendors, regulatory)
    - Seasonal constraints (year-end, peak business periods)
@@ -93,6 +102,9 @@ Execution steps:
    - Prerequisite initiative completion
 
    **Risk Identification & Mitigation:**
+   - **CRITICAL: Probability/Impact assessment for each risk (L/M/H)**
+   - **Risk scoring and prioritization**
+   - **Mitigation plans for high-risk items (score ≥6)**
    - Business risks (market changes, competitive threats)
    - Organizational risks (leadership change, reorg, attrition)
    - Execution risks (capacity, capability gaps, timeline)
@@ -101,6 +113,10 @@ Execution steps:
    - Mitigation strategies for high-severity risks
 
    **Success Metrics & Measurement:**
+   - **CRITICAL: Baseline data availability (can we measure this today?)**
+   - **Baseline measurement timing (when measured before starting?)**
+   - **Measurement ownership (who collects/analyzes/reports?)**
+   - **Data quality and collection method validation**
    - KPI definitions and calculation methods
    - Baseline measurement approach
    - Data collection mechanisms
@@ -129,6 +145,10 @@ Execution steps:
 
    **Completion Signals:**
    - Initiative completion criteria (not just launch)
+   - **CRITICAL: BAU owner identification (who owns long-term?)**
+   - **Knowledge transfer plan (how will knowledge be transferred?)**
+   - **Support model definition (who handles issues post-launch?)**
+   - **Continuous improvement process**
    - Sustainment and handoff planning
    - Knowledge transfer requirements
    - Definition of Done clarity
