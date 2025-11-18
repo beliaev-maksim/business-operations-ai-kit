@@ -1,21 +1,5 @@
 ---
 description: Execute the initiative planning workflow using the plan template to generate execution artifacts for business operations.
-scripts:
-  sh: scripts/bash/setup-plan.sh --json
-  ps: scripts/powershell/setup-plan.ps1 -Json
-agent_s      - Resistance Management:
-         - Expected resistance (from stakeholder analysis)
-         - Mitigation strategies for each resistance type
-         - Champions network: Identify and activate early adopters
-         - Executive air cover: When to escalate for leadership support
-   ```
-   
-   **REMINDER**: Create communication plan templates in markdown. Do NOT create actual emails, presentations, or implementation artifacts yet.
-
-3. **Training & Enablement Design**:
-
-   **Generate `INITIATIVE_DIR/training-materials/` directory with**:sh: scripts/bash/update-agent-context.sh __AGENT__
-  ps: scripts/powershell/update-agent-context.ps1 -AgentType __AGENT__
 ---
 
 ## User Input
@@ -40,7 +24,10 @@ Apply proven consulting frameworks and best practices throughout this planning w
 
 ## Outline
 
-1. **Setup**: Run `{SCRIPT}` from repo root and parse JSON for INITIATIVE_SPEC, EXEC_PLAN, SPECS_DIR, INITIATIVE_DIR, BRANCH. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
+1. **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+   - INITIATIVE_SPEC = `specs/<initiative-name>/spec.md`
+   - EXEC_PLAN = `specs/<initiative-name>/plan.md`
+   - INITIATIVE_DIR = `specs/<initiative-name>/`
 
 2. **Load context**: Read INITIATIVE_SPEC and `/.specify/memory/constitution.md`. Load EXEC_PLAN template (already copied).
 
@@ -58,7 +45,7 @@ Apply proven consulting frameworks and best practices throughout this planning w
    - Evaluate gates (ERROR if violations unjustified or significant risks unmitigated)
    - Phase 0: Generate `INITIATIVE_DIR/stakeholder-analysis.md` (resolve all NEEDS CLARIFICATION)
    - Phase 1: Generate `INITIATIVE_DIR/process-maps.md` (if relevant), `INITIATIVE_DIR/communication-plan.md`, `INITIATIVE_DIR/execution-guide.md`, `INITIATIVE_DIR/training-materials/` directory
-   - Phase 1: Update agent context by running the agent script
+   - Phase 1: Update agent context if necessary.
    - Re-evaluate Constitution Check post-planning (ensure readiness for execution)
 
 5. **Stop and report**: Command ends after Phase 1 planning complete. Report branch, EXEC_PLAN path, INITIATIVE_DIR, and generated artifacts (all within INITIATIVE_DIR).

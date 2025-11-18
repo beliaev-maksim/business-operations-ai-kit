@@ -1,8 +1,5 @@
 ---
 description: Create or update the initiative specification from a natural language description for OKR planning.
-scripts:
-  sh: scripts/bash/create-new-feature.sh --json "{ARGS}"
-  ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
 ---
 
 ## User Input
@@ -19,7 +16,7 @@ The text the user typed after `/speckit.specify` in the triggering message **is*
 
 Given that initiative description, do this:
 
-1. **Generate a concise short name** (2-4 words) for the branch:
+1. **Generate a concise short name** (2-4 words) for the initiative directory:
    - Analyze the initiative description and extract the most meaningful keywords
    - Create a 2-4 word short name that captures the essence of the initiative
    - Use action-noun format when possible (e.g., "quarterly-okr-planning", "customer-retention-program")
@@ -31,37 +28,21 @@ Given that initiative description, do this:
      - "Create analytics dashboard for leadership" → "leadership-analytics"
      - "Streamline budget approval workflow" → "budget-approval-workflow"
 
-2. **Check for existing branches before creating new one**:
+2. **Determine the initiative directory**:
    
-   a. First, fetch all remote branches to ensure we have the latest information:
-      ```bash
-      git fetch --all --prune
-      ```
+   a. Find the highest initiative number across all sources for the short-name:
+      - Check for directories matching `specs/[0-9]+-<short-name>`
    
-   b. Find the highest initiative number across all sources for the short-name:
-      - Remote branches: `git ls-remote --heads origin | grep -E 'refs/heads/[0-9]+-<short-name>$'`
-      - Local branches: `git branch | grep -E '^[* ]*[0-9]+-<short-name>$'`
-      - Specs directories: Check for directories matching `specs/[0-9]+-<short-name>`
-   
-   c. Determine the next available number:
-      - Extract all numbers from all three sources
+   b. Determine the next available number:
+      - Extract all numbers from existing directories
       - Find the highest number N
-      - Use N+1 for the new branch number
+      - Use N+1 for the new initiative number
    
-   d. Run the script `{SCRIPT}` with the calculated number and short-name:
-      - Pass `--number N+1` and `--short-name "your-short-name"` along with the initiative description
-      - Bash example: `{SCRIPT} --json --number 5 --short-name "quarterly-planning" "Improve quarterly planning process"`
-      - PowerShell example: `{SCRIPT} -Json -Number 5 -ShortName "quarterly-planning" "Improve quarterly planning process"`
+   c. The new initiative directory will be `specs/<N+1>-<your-short-name>/`.
    
    **IMPORTANT**:
-   - Check all three sources (remote branches, local branches, specs directories) to find the highest number
-   - Only match branches/directories with the exact short-name pattern
-   - If no existing branches/directories found with this short-name, start with number 1
-   - You must only ever run this script once per initiative
-   - The JSON is provided in the terminal as output - always refer to it to get the actual content you're looking for
-   - The JSON output will contain BRANCH_NAME, SPEC_FILE paths, and INITIATIVE_DIR (the folder for all initiative artifacts)
+   - If no existing directories are found with this short-name, start with number 1.
    - **ALL initiative files MUST be created inside INITIATIVE_DIR** (specs/<number>-<short-name>/)
-   - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot")
 
 3. Load `templates/spec-template.md` to understand required sections.
 
@@ -202,11 +183,11 @@ Given that initiative description, do this:
 
    d. **Update Checklist**: After each validation iteration, update the checklist file with current pass/fail status
 
-7. Report completion with branch name, spec file path, initiative folder (INITIATIVE_DIR), checklist results, and readiness for the next phase (`/speckit.clarify` or `/speckit.plan`).
+7. Report completion with the spec file path, initiative folder (INITIATIVE_DIR), checklist results, and readiness for the next phase (`/speckit.clarify` or `/speckit.plan`).
 
 **REMINDER**: This is the specification/brainstorming phase. Do NOT create implementation artifacts like .yaml files, .py scripts, .csv templates, etc. Those will be created during `/speckit.implement` phase.
 
-**NOTE:** The script creates and checks out the new branch and initializes the spec file before writing.
+**NOTE:** This prompt will create the initiative directory and the spec file.
 
 ## General Guidelines
 

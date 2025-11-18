@@ -1,8 +1,5 @@
 ---
 description: Generate an actionable, dependency-ordered tasks.md for the business initiative based on available planning artifacts.
-scripts:
-  sh: scripts/bash/check-prerequisites.sh --json
-  ps: scripts/powershell/check-prerequisites.ps1 -Json
 ---
 
 ## User Input
@@ -26,12 +23,11 @@ Think like a project manager executing a business transformation, not a software
 
 ## Outline
 
-1. **Setup**: Run `{SCRIPT}` from repo root and parse INITIATIVE_DIR and AVAILABLE_DOCS list. All paths must be absolute. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
+1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+    -   INITIATIVE_DIR = `specs/<initiative-name>/`
+    -   AVAILABLE_DOCS = List of files in `INITIATIVE_DIR`
 
-2. **Load planning documents**: Read from INITIATIVE_DIR (specs/<number>-<short-name>/):
-   - **Required**: plan.md (execution strategy, resources, timeline), spec.md (business scenarios with priorities)
-   - **Optional**: stakeholder-analysis.md (stakeholder mapping, readiness), communication-plan.md (communication strategy), execution-guide.md (phasing, gates), process-maps.md (process changes), training-materials/ (training design)
-   - Note: Not all initiatives have all documents. Generate tasks based on what's available.
+2.  **File Check**: Abort with an error message if `spec.md` or `plan.md` are missing from AVAILABLE_DOCS. Instruct the user to run the prerequisite commands (`/speckit.specify`, `/speckit.plan`).
 
 3. **Execute task generation workflow**:
    - Load plan.md and extract execution strategy, phasing approach, resource allocation

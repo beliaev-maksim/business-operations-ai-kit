@@ -1,8 +1,5 @@
 ---
 description: Identify underspecified areas in the current initiative spec by asking up to 5 highly targeted clarification questions and encoding answers back into the spec.
-scripts:
-   sh: scripts/bash/check-prerequisites.sh --json --paths-only
-   ps: scripts/powershell/check-prerequisites.ps1 -Json -PathsOnly
 ---
 
 ## User Input
@@ -33,12 +30,10 @@ Note: This clarification workflow is expected to run (and be completed) BEFORE i
 
 Execution steps:
 
-1. Run `{SCRIPT}` from repo root **once** (combined `--json --paths-only` mode / `-Json -PathsOnly`). Parse minimal JSON payload fields:
-   - `INITIATIVE_DIR`
-   - `INITIATIVE_SPEC`
-   - (Optionally capture `EXEC_PLAN`, `TASKS` for future chained flows.)
-   - If JSON parsing fails, abort and instruct user to re-run `/speckit.specify` or verify initiative branch environment.
-   - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
+1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+    -   INITIATIVE_DIR = `specs/<initiative-name>/`
+    -   INITIATIVE_SPEC = `specs/<initiative-name>/spec.md`
+    -   If parsing fails, abort and instruct user to re-run `/speckit.specify` or verify initiative branch environment.
 
 2. Load the current spec file. Perform a structured ambiguity & coverage scan using this taxonomy. For each category, mark status: Clear / Partial / Missing. Produce an internal coverage map used for prioritization (do not output raw map unless no questions will be asked).
 

@@ -1,8 +1,5 @@
 ---
 description: Perform a non-destructive cross-artifact consistency and quality analysis across spec.md, plan.md, and tasks.md after task generation.
-scripts:
-  sh: scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks
-  ps: scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks
 ---
 
 ## User Input
@@ -39,14 +36,11 @@ Identify inconsistencies, gaps, oversights, and quality issues across the three 
 
 ### 1. Initialize Analysis Context
 
-Run `{SCRIPT}` once from repo root and parse JSON for INITIATIVE_DIR and AVAILABLE_DOCS. Derive absolute paths:
+Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
 
-- SPEC = INITIATIVE_DIR/spec.md
-- PLAN = INITIATIVE_DIR/plan.md
-- TASKS = INITIATIVE_DIR/tasks.md
-
-Abort with an error message if any required file is missing (instruct the user to run missing prerequisite command).
-For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
+- SPEC = `specs/<initiative-name>/spec.md`
+- PLAN = `specs/<initiative-name>/plan.md`
+- TASKS = `specs/<initiative-name>/tasks.md`
 
 ### 2. Load Artifacts (Progressive Disclosure)
 

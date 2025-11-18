@@ -1,8 +1,5 @@
 ---
 description: Execute the initiative execution plan by processing and completing all tasks defined in tasks.md
-scripts:
-  sh: scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks
-  ps: scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks
 ---
 
 ## User Input
@@ -28,9 +25,11 @@ Think like a project manager executing a business transformation, tracking deliv
 
 ## Outline
 
-1. Run `{SCRIPT}` from repo root and parse INITIATIVE_DIR and AVAILABLE_DOCS list. All paths must be absolute. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
+1.  **Setup**: Assume the initiative files are located in a directory under `specs/`. The user should provide the initiative directory. From there, derive the absolute paths for the core artifacts. If no directory is provided, you may need to ask the user for it.
+    -   INITIATIVE_DIR = `specs/<initiative-name>/`
+    -   AVAILABLE_DOCS = List of files in `INITIATIVE_DIR`
 
-2. **Check checklists status** (if INITIATIVE_DIR/checklists/ exists):
+2.  **Check checklists status** (if INITIATIVE_DIR/checklists/ exists):
    - Scan all checklist files in the checklists/ directory
    - For each checklist, count:
      - Total items: All lines matching `- [ ]` or `- [X]` or `- [x]`
