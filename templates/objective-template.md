@@ -13,14 +13,89 @@
 
 ## Objective *(mandatory)*
 
-[Clear, inspiring statement of what this initiative aims to achieve and why it matters to the organization. Must be specific, measurable, achievable, relevant, and time-bound (SMART).]
+# Objective: [OBJECTIVE_NAME]
 
-**SMART Validation**:
-- **Specific**: [Is the objective clear and unambiguous?]
-- **Measurable**: [Can progress be tracked quantitatively?]
-- **Achievable**: [Is this realistic given resources and constraints?]
-- **Relevant**: [Does this align with strategic priorities?]
-- **Time-bound**: [Is there a clear deadline or timeframe?]
+**Quarter/Period**: [Q1 2024]
+**Owner**: [Name/Team]
+**Function**: [HR/Legal/Sales Ops/Marketing/Finance/Operations/Other]
+**Created**: [DATE]
+**Status**: Draft
+**Input**: Description: "{{user_input}}"
+
+## 1. Strategic Context *(mandatory)*
+
+[Describe how this objective aligns with organizational strategy, which company OKRs it supports, and why it's prioritized. Reference `01_organization.md` and `02_constitution.md` to ensure alignment with company goals and principles.]
+
+## 2. Initial Problem Statement *(mandatory)*
+
+[A concise, one-sentence description of the problem as initially understood from the user's input.]
+
+## 3. Root Cause Analysis (The 5 Whys) *(mandatory)*
+
+[The agent will guide the user through a "5 Whys" exercise to uncover the root cause of the problem. The agent should make educated guesses where possible and ask clarifying questions when necessary.]
+
+*   **Why 1?** [Symptom-level problem]
+    *   **Answer:** [Reason]
+*   **Why 2?** [Deeper problem]
+    *   **Answer:** [Reason]
+*   **Why 3?** [Process or people-related problem]
+    *   **Answer:** [Reason]
+*   **Why 4?** [Systemic or cultural problem]
+    *   **Answer:** [Reason]
+*   **Why 5?** **(The Root Cause)** [Fundamental issue]
+    *   **Answer:** [The core reason that, if addressed, will prevent the problem from recurring.]
+
+## 4. Refined Problem Statement *(mandatory)*
+
+[Based on the root cause analysis, provide a clear and concise statement of the *actual* problem that needs to be solved. This should be understood by any team member.]
+
+## 5. Problem-Oriented KPIs & Success Metrics *(mandatory)*
+
+[Define the Key Performance Indicators (KPIs) that will measure whether the root problem is solved. These are not solution-specific metrics but problem-level indicators.]
+
+*   **KPI-001**: [Metric that directly measures the root cause, e.g., "Time to complete X process from Y hours to Z hours."]
+    *   **Baseline**: [Current value]
+    *   **Target**: [Desired value]
+    *   **Rationale**: [Why this KPI is the best measure of the problem.]
+*   **KPI-002**: [A secondary metric that provides additional evidence of the problem being solved.]
+    *   **Baseline**: [Current value]
+    *   **Target**: [Desired value]
+    *   **Rationale**: [Why this KPI is relevant.]
+*   **KPI-003**: [A counter-metric to ensure that solving this problem doesn't negatively impact other areas.]
+    *   **Baseline**: [Current value]
+    *   **Target**: [Acceptable range]
+    *   **Rationale**: [What negative side-effect this KPI is monitoring.]
+
+## 6. Potential Solutions (Brainstorming) *(optional)*
+
+[This section is for brainstorming potential solutions *after* the problem is clearly defined. It acknowledges that there may be multiple ways to solve the root problem. The final choice of solution will be detailed in a separate plan.]
+
+*   **Solution A**: [Brief description of one possible approach.]
+*   **Solution B**: [Brief description of another possible approach.]
+*   **Solution C**: [Brief description of a third possible approach.]
+
+## 7. Stakeholders *(mandatory)*
+
+[List the key stakeholders involved in or affected by this problem.]
+
+| Stakeholder/Group | Role | Key Concerns/Interests |
+|-------------------|------|------------------------|
+| [Executive Sponsor] | Accountable | [ROI, strategic alignment] |
+| [Problem Owner]   | Responsible | [Solving the root cause] |
+| [Affected Teams]  | Informed    | [Impact on their work] |
+| [SMEs]            | Consulted   | [Providing expert input] |
+
+## 8. Assumptions & Risks *(mandatory)*
+
+### Assumptions
+[List any assumptions made during the problem definition process.]
+*   [Assumption 1]
+*   [Assumption 2]
+
+### Risks
+[List any risks that could prevent the problem from being solved effectively.]
+*   [Risk 1: e.g., The identified root cause is incorrect.]
+*   [Risk 2: e.g., Lack of resources to implement any solution.]
 
 ## Business Scenarios & Success Measures *(mandatory)*
 
