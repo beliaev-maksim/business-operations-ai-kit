@@ -28,7 +28,7 @@ The user may provide the name of the solution they have chosen.
 
 3.  **Task Plan Generation**:
     *   Once a valid solution is chosen, proceed with generating the detailed task plan.
-    *   **Step 3a: Create New File**: Create a new file named `05_<solution_name>.md`. Sanitize the chosen solution name to be filesystem-friendly (e.g., replace spaces with hyphens, lowercase).
+    *   **Step 3a: Create New File**: Create a new file named `06_<solution_name>.md`. Sanitize the chosen solution name to be filesystem-friendly (e.g., replace spaces with hyphens, lowercase).
     *   **Step 3b: Load Template**: Use the content of `templates/tasks-template.md` as the foundational structure for the new file.
     *   **Step 3c: Populate the Template**: You will now fill in the placeholders in the template with extreme detail and professionalism.
         *   **[SOLUTION_NAME]**: The name of the chosen solution.
@@ -54,7 +54,7 @@ The user may provide the name of the solution they have chosen.
                 *   **Dependencies**: Note if task depends on completion of other tasks or external parties.
 
 4.  **Report to User**:
-    *   Once the `05_<solution_name>.md` file has been created and saved, inform the user of the success.
+    *   Once the `06_<solution_name>.md` file has been created and saved, inform the user of the success.
     *   Provide the full path to the newly created file.
     *   Briefly summarize the plan, mentioning the chosen solution and the number of tasks generated across the five phases.
     - Suggest the next step, which is to review the plan and secure stakeholder buy-in.
