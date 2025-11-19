@@ -9,6 +9,7 @@ To use this kit, you will need the following:
 1.  **Visual Studio Code**: This is the editor where you will interact with the AI agent. You can download it from [here](https://code.visualstudio.com/).
 2.  **GitHub Copilot Extension**: This VS Code extension provides the AI capabilities. You can install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot).
 3.  **GitHub Copilot Subscription** or **Valid API key to LLM**: You need an active subscription to get access to major LLMs.
+4.  **Copy of this repository**: Create a new repository using [this template](https://github.com/new?template_name=business-operations-ai-kit&template_owner=beliaev-maksim). This can be used to store company wide organizational context or departmental consitution files.
 
 ## How It Works
 
